@@ -16,24 +16,15 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     end
   end
 
-  scenario "They see the selected products" do
+  scenario 'They see the selected products' do
     # ACT
     visit root_path
    first('a.btn-default').click
     # DEBUG 
     #VERIFY
-    expect(page).to  have_css 'section.products-show', count:1
-    save_screenshot
+    expect(page).to have_css 'section.products-show', count:1
+    save_screenshot('products_page.png')
 
   end
-
-
-
-
-
-
-
-
-
 
 end

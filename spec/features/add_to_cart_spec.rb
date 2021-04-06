@@ -25,7 +25,7 @@ RSpec.feature "AddToCart", type: :feature, js: true do
 
      expect(page).to  have_css'#navbar', text: 'My Cart (1)'
 
-    save_screenshot
+    save_screenshot("cart_page.png")
   end 
 
 
