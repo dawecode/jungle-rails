@@ -49,7 +49,41 @@ RSpec.describe User, type: :model do
       expect(@user2).not_to be_valid 
       expect(@user2.errors.full_messages[0]).to eq("Email has already been taken")
     end
+  
+  describe '.authenticate_with_credentials' do 
+      it "should authenticate with credentials" do 
+        @user = User.new(:first_name => "test", :last_name => "2test",  :email => "test@test.com" , :password => "test12", :password_confirmation => "test12" )
+        @user.save 
+        expect(User.authenticate_with_credentials(@user.email, @user.password)).to eq(@user)
+      end
 
+
+      it "should not authenticate with invalid email" do 
+        @user = User.new(:first_name => "test", :last_name => "2test",  :email => "test@test.com" , :password => "test12", :password_confirmation => "test12" )
+        @user.save 
+        expect(User.authenticate_with_credentials("wrong@test.com", @user.password)).to be_nil
+      end
+
+      it "should not authenticate with invalid password" do 
+        @user = User.new(:first_name => "test", :last_name => "2test",  :email => "test@test.com" , :password => "test12", :password_confirmation => "test12" )
+        @user.save 
+        expect(User.authenticate_with_credentials(@user.email, "wrongpassword")).to be_nil
+      end
+
+      it "should authenticate with extra spaces before email" do 
+        @user = User.new(:first_name => "test", :last_name => "2test",  :email => "test@test.com" , :password => "test12", :password_confirmation => "test12" )
+        @user.save 
+        expect(User.authenticate_with_credentials("   test@test.com",@user.password)).to eq(@user)
+      end
+
+
+      it "should authenticate with wrong case email" do 
+        @user = User.new(:first_name => "test", :last_name => "2test",  :email => "TeST@test.com" , :password => "test12", :password_confirmation => "test12" )
+        @user.save 
+        expect(User.authenticate_with_credentials("test@TeST.com",@user.password)).to eq(@user)
+      end
+
+   end 
 
 
   end
