@@ -4,9 +4,9 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 
 ## Final product
-![home page](https://link)
-![Cart](https://link)
-![Signup](https://link)
+![home page](https://github.com/dawecode/jungle-rails/blob/master/docs/login-jungle.png)
+![Cart](https://github.com/dawecode/jungle-rails/blob/master/docs/cart.png)
+![Signup](https://github.com/dawecode/jungle-rails/blob/master/docs/signup.png)
                       
 
 ## Additional Steps for Apple M1 Machines                      
