@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
-
-  # SETUP
-  before :each do
+RSpec.feature "AddToCart", type: :feature, js: true do
+   # SETUP
+   before :each do
     @category = Category.create! name: 'Apparel'
 
     10.times do |n|
@@ -17,15 +16,17 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     end
   end
 
-  scenario "They see all products" do
+  scenario "Click the add button and add 1 to the cart" do
     # ACT
     visit root_path
-
+   click_button('Add',match: :first)
     # DEBUG 
     #VERIFY
-    expect(page).to have_css 'article.product',count:10
-    save_screenshot('home_page.png')
 
-  end
+     expect(page).to  have_css'#navbar', text: 'My Cart (1)'
+
+    save_screenshot("cart_page.png")
+  end 
+
 
 end
