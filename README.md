@@ -4,8 +4,11 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 
 ## Final product
+#### Home Page
 ![home page](https://github.com/dawecode/jungle-rails/blob/master/docs/login-jungle.png)
+#### Cart Page
 ![Cart](https://github.com/dawecode/jungle-rails/blob/master/docs/cart.png)
+#### Signup Page
 ![Signup](https://github.com/dawecode/jungle-rails/blob/master/docs/signup.png)
                       
 
