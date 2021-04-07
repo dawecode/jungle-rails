@@ -2,7 +2,14 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example during the Lighthouse Labs Bootcamp.
 
-## Additional Steps for Apple M1 Machines
+
+## Final product
+![home page](https://link)
+![Cart](https://link)
+![Signup](https://link)
+                      
+
+## Additional Steps for Apple M1 Machines                      
 
 1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
 1. Install ImageMagick `brew install imagemagick imagemagick@6 --build-from-source`
